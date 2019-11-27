@@ -56,16 +56,7 @@ get '/list_table' do
  erb :list_table
  end
  
- get '/list_2' do
-  
-my_data={
-  {name: Alice",country: "Kenya", age:  20} ,
-{ name: "Michael",  age:  23, country: "Tanzania"},
-{name: "Jane", age: 43, country: "Ghana",  },
-{name: "Clare", age: 32, " country: "Uganda"},
-{ name: "Mary",  age:  23,country:  "Ethiopia"},
-{name: "John",age:   4, country: "Egypt"}
-}
+ 
 
 
 __END__
