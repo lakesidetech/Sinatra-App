@@ -42,24 +42,57 @@ get '/signup/:age' do
 erb :signup
 end
 
-get '/list_table' do
-  data={
+get '/list_tbl' do
+  aa={
     "name"=> ["Alice", "Michael", "Jane", "Clare", "Mary", "John"],
     "age" => [20, 23, 43, 32, 23, 44],
     "country" => ["Kenya", "Tanzania", "Ghana", "Uganda", "Ethiopia", "Egypt"]
 }   
-@names=data["name"]
-@ages=data["age"]
-@countries=data["country"]
+@names=aa["name"]
+@ages=aa["age"]
+@countries=aa["country"]
 
-
- erb :list_table
+ erb :list_tbl
  end
  
- 
+ get '/list_2' do
+  
+  data2 = [
+  {name: "Alice", age:20, country: "Kenya"} ,
+  {name: "Michael", age:  23, country: "Tanzania"},
+  {name: "Jane", age: 43, country: "Ghana"},
+  {name: "Clare", age: 32,  country: "Uganda"},
+  {name: "Mary",  age: 23, country:  "Ethiopia"},
+  {name: "John", age:4, country: "Egypt"}
+  ]
+#   @x=data2.each{|names|[:name]}
+#   data2.each{|names|puts names[:name]}
 
+
+#   data2.each do |i|
+#     puts i
+#  end
+ 
+  @names1=data2[0][:name]
+  @names2=data2[1][:name]
+  @names3=data2[2][:name]
+  @names4=data2[3][:name]
+  @names5=data2[4][:name]
+  @names6=data2[5][:name]
+  
+  @age1=data2[0][:age]
+  @age2=data2[1][:age]
+  @age3=data2[2][:age]
+  @age4=data2[3][:age]
+  @age5=data2[4][:age]
+  @age6=data2[5][:age]
+
+  
+  erb :list_2
+end
 
 __END__
+
 @@layout
 <!DOCTYPE html>
 <html>
@@ -83,7 +116,7 @@ __END__
 <%end%>
 </body>
 
-@@list_table
+@@list_tbl
 <table border="1">
   <tr>
     <th>Name</th>
@@ -119,7 +152,32 @@ __END__
   </tr>
   
   </table>
-  
+
+@@list_2
+<p>"this is a new thing"<p>
+<table>
+<tr>
+  <th>NAMES</th>
+  <th>AGE</th>
+  <th>country</th>
+</tr>
+<tr>
+  <td><%=@names1%></td>
+  <td><%=@age1%></td>
+  <td></td>
+</tr>
+<tr>
+  <td><%=@names2%></td>
+  <td><%=@age2%></td>
+  <td></td>
+</tr>
+<tr>
+  <td><%=@names3%></td>
+  <td><%=@age3%></td>
+  <td></td>
+</tr>
+</table>
+
 @@index
 <h1>Users</h1>
 <ul>
